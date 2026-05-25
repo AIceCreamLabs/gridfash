@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gridfash</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  <style>
+    html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: calc(10000vw / 1440);
+}
+
+@font-face {
+  src: url("../fonts/interRegular/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/interRegular/Inter-Regular.woff") format("woff");
+  font-family: "inter-regular";
+}
+@font-face {
+  src: url("../fonts/interBold/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/interBold/Inter-Bold.woff") format("woff");
+  font-family: "inter-bold";
+}
+@font-face {
+  src: url("../fonts/tomato/TomatoGroteskRegular.woff2") format("woff2"),
+    url("../fonts/tomato/TomatoGroteskRegular.woff") format("woff");
+  font-family: "tomato-regular";
+}
+:root {
+  --main-font: "tomato-regular", sans-serif;
+  --sub-font: "inter-bold", sans-serif;
+  --font-size-h1: 0.44rem;
+  --font-size-h2: 0.28rem;
+  --font-size-desc1: 0.14rem;
+  --font-size-label1: 0.2rem;
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --line-height-0: 0;
+  --line-height-initial: initial;
+  --line-height-h1: 0.48rem;
+  --line-height-h2: 0.25rem;
+  --line-height-desc1: 0.16rem;
+  --line-height-label-1: 0.3rem;
+  -font-style: italian;
+  --letter-spacing: normal;
+  --letter-spacing-0: 0;
+  --letter-spacing-9: -0.9px;
+  --opacity-09: 0.9;
+  --opacity-1: 1;
+}
+:root :root {
+  --font-size-h1: 0.24rem;
+  --font-size-h2: 0.2rem;
+  --font-size-label1: 0.2rem;
+  --font-size-desc1: 0.18rem;
+  --line-height-h1: 0.27rem;
+  --line-height-h2: 0.32rem;
+  --line-height-label-1: 0.3rem;
+  --line-height-desc1: 0.31rem;
+}
+
+:root {
+  --color-white: #ffffff;
+}
+
+:root {
+  --container-width: 14.4rem;
+}
+
+:root {
+  --main-font: "tomato-regular", sans-serif;
+  --sub-font: "inter-bold", sans-serif;
+  --font-size-h1: 0.44rem;
+  --font-size-h2: 0.28rem;
+  --font-size-desc1: 0.14rem;
+  --font-size-label1: 0.2rem;
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --line-height-0: 0;
+  --line-height-initial: initial;
+  --line-height-h1: 0.48rem;
+  --line-height-h2: 0.25rem;
+  --line-height-desc1: 0.16rem;
+  --line-height-label-1: 0.3rem;
+  -font-style: italian;
+  --letter-spacing: normal;
+  --letter-spacing-0: 0;
+  --letter-spacing-9: -0.9px;
+  --opacity-09: 0.9;
+  --opacity-1: 1;
+}
+:root :root {
+  --font-size-h1: 0.24rem;
+  --font-size-h2: 0.2rem;
+  --font-size-label1: 0.2rem;
+  --font-size-desc1: 0.18rem;
+  --line-height-h1: 0.27rem;
+  --line-height-h2: 0.32rem;
+  --line-height-label-1: 0.3rem;
+  --line-height-desc1: 0.31rem;
+}
+
+:root {
+  --color-white: #ffffff;
+}
+
+:root {
+  --container-width: 14.4rem;
+}
+
+html.center-text,
+body.center-text,
+div.center-text,
+span.center-text,
+h1.center-text,
+h2.center-text,
+h3.center-text,
+h4.center-text,
+h5.center-text,
+h6.center-text,
+p.center-text,
+blockquote.center-text,
+a.center-text,
+small.center-text,
+strong.center-text,
+ul.center-text,
+li.center-text,
+form.center-text,
+label.center-text,
+article.center-text,
+footer.center-text,
+header.center-text,
+nav.center-text,
+section.center-text,
+input.center-text,
+textarea.center-text,
+button.center-text {
+  text-align: center;
+}
+html.left-text,
+body.left-text,
+div.left-text,
+span.left-text,
+h1.left-text,
+h2.left-text,
+h3.left-text,
+h4.left-text,
+h5.left-text,
+h6.left-text,
+p.left-text,
+blockquote.left-text,
+a.left-text,
+small.left-text,
+strong.left-text,
+ul.left-text,
+li.left-text,
+form.left-text,
+label.left-text,
+article.left-text,
+footer.left-text,
+header.left-text,
+nav.left-text,
+section.left-text,
+input.left-text,
+textarea.left-text,
+button.left-text {
+  text-align: left;
+}
+html.right-text,
+body.right-text,
+div.right-text,
+span.right-text,
+h1.right-text,
+h2.right-text,
+h3.right-text,
+h4.right-text,
+h5.right-text,
+h6.right-text,
+p.right-text,
+blockquote.right-text,
+a.right-text,
+small.right-text,
+strong.right-text,
+ul.right-text,
+li.right-text,
+form.right-text,
+label.right-text,
+article.right-text,
+footer.right-text,
+header.right-text,
+nav.right-text,
+section.right-text,
+input.right-text,
+textarea.right-text,
+button.right-text {
+  text-align: right;
+}
+html.cap-text,
+body.cap-text,
+div.cap-text,
+span.cap-text,
+h1.cap-text,
+h2.cap-text,
+h3.cap-text,
+h4.cap-text,
+h5.cap-text,
+h6.cap-text,
+p.cap-text,
+blockquote.cap-text,
+a.cap-text,
+small.cap-text,
+strong.cap-text,
+ul.cap-text,
+li.cap-text,
+form.cap-text,
+label.cap-text,
+article.cap-text,
+footer.cap-text,
+header.cap-text,
+nav.cap-text,
+section.cap-text,
+input.cap-text,
+textarea.cap-text,
+button.cap-text {
+  text-transform: capitalize;
+}
+html.up-text,
+body.up-text,
+div.up-text,
+span.up-text,
+h1.up-text,
+h2.up-text,
+h3.up-text,
+h4.up-text,
+h5.up-text,
+h6.up-text,
+p.up-text,
+blockquote.up-text,
+a.up-text,
+small.up-text,
+strong.up-text,
+ul.up-text,
+li.up-text,
+form.up-text,
+label.up-text,
+article.up-text,
+footer.up-text,
+header.up-text,
+nav.up-text,
+section.up-text,
+input.up-text,
+textarea.up-text,
+button.up-text {
+  text-transform: uppercase;
+}
+html.low-text,
+body.low-text,
+div.low-text,
+span.low-text,
+h1.low-text,
+h2.low-text,
+h3.low-text,
+h4.low-text,
+h5.low-text,
+h6.low-text,
+p.low-text,
+blockquote.low-text,
+a.low-text,
+small.low-text,
+strong.low-text,
+ul.low-text,
+li.low-text,
+form.low-text,
+label.low-text,
+article.low-text,
+footer.low-text,
+header.low-text,
+nav.low-text,
+section.low-text,
+input.low-text,
+textarea.low-text,
+button.low-text {
+  text-transform: lowercase;
+}
+html.title-h1,
+body.title-h1,
+div.title-h1,
+span.title-h1,
+h1.title-h1,
+h2.title-h1,
+h3.title-h1,
+h4.title-h1,
+h5.title-h1,
+h6.title-h1,
+p.title-h1,
+blockquote.title-h1,
+a.title-h1,
+small.title-h1,
+strong.title-h1,
+ul.title-h1,
+li.title-h1,
+form.title-h1,
+label.title-h1,
+article.title-h1,
+footer.title-h1,
+header.title-h1,
+nav.title-h1,
+section.title-h1,
+input.title-h1,
+textarea.title-h1,
+button.title-h1 {
+  color: var(--color-white);
+  font-family: var(--sub-font);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-9);
+  letter-spacing: var(--letter-spacing-9);
+  line-height: var(--line-height-h1);
+}
+html.title-h2,
+body.title-h2,
+div.title-h2,
+span.title-h2,
+h1.title-h2,
+h2.title-h2,
+h3.title-h2,
+h4.title-h2,
+h5.title-h2,
+h6.title-h2,
+p.title-h2,
+blockquote.title-h2,
+a.title-h2,
+small.title-h2,
+strong.title-h2,
+ul.title-h2,
+li.title-h2,
+form.title-h2,
+label.title-h2,
+article.title-h2,
+footer.title-h2,
+header.title-h2,
+nav.title-h2,
+section.title-h2,
+input.title-h2,
+textarea.title-h2,
+button.title-h2 {
+  color: var(--color-white);
+  font-family: var(--sub-font);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-7);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height-h2);
+}
+html.label-1,
+body.label-1,
+div.label-1,
+span.label-1,
+h1.label-1,
+h2.label-1,
+h3.label-1,
+h4.label-1,
+h5.label-1,
+h6.label-1,
+p.label-1,
+blockquote.label-1,
+a.label-1,
+small.label-1,
+strong.label-1,
+ul.label-1,
+li.label-1,
+form.label-1,
+label.label-1,
+article.label-1,
+footer.label-1,
+header.label-1,
+nav.label-1,
+section.label-1,
+input.label-1,
+textarea.label-1,
+button.label-1 {
+  color: var(--color-white);
+  font-family: var(--main-font);
+  font-size: var(--font-size-label1);
+  font-weight: var(--font-weight-5);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height-label-1);
+}
+html.desc-1,
+body.desc-1,
+div.desc-1,
+span.desc-1,
+h1.desc-1,
+h2.desc-1,
+h3.desc-1,
+h4.desc-1,
+h5.desc-1,
+h6.desc-1,
+p.desc-1,
+blockquote.desc-1,
+a.desc-1,
+small.desc-1,
+strong.desc-1,
+ul.desc-1,
+li.desc-1,
+form.desc-1,
+label.desc-1,
+article.desc-1,
+footer.desc-1,
+header.desc-1,
+nav.desc-1,
+section.desc-1,
+input.desc-1,
+textarea.desc-1,
+button.desc-1 {
+  color: var(--color-white);
+  font-family: var(--main-font);
+  font-size: var(--font-size-desc1);
+  font-weight: var(--font-weight-4);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height-desc1);
+}
+
+.hero-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+}
+.hero-section .container .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.hero-section .container .socials .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  right: -30px;
+}
+.hero-section .container .socials .links a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -webkit-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px);
+}
+.hero-section .container .socials .links a:hover {
+  opacity: 0.7;
+}
+.hero-section .container .socials .logo-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+}
+.hero-section .container .socials .logo-desc .hide-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+.hero-section .container .socials .logo-desc img {
+  width: 62px;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.hero-section .container .socials .logo-desc .hide-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  transform-origin: right bottom;
+  overflow: hidden;
+  position: relative;
+  top: -15px;
+}
+.hero-section .container .socials .logo-desc p {
+  color: #fff;
+  text-align: end;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+}
+.hero-section .container .socials.active .links a {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.hero-section .container .socials.active .logo-desc img {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.hero-section .container .socials.active .logo-desc p {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.hero-section .container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  height: 268px;
+  position: absolute;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.hero-section .container .wrapper .description-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -165px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.hero-section .container .wrapper .description-center .grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.hero-section .container .wrapper .description-center .grid .plusik {
+  position: absolute;
+}
+.hero-section .container .wrapper .description-center .grid span {
+  position: relative;
+  font-weight: 900;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 12px;
+}
+.hero-section .container .wrapper .description-center .grid span p {
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .grid
+  span:nth-of-type(2) {
+  left: 90px;
+  margin-bottom: 28px;
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .grid
+  span:nth-of-type(2)
+  p {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .grid
+  span:nth-of-type(3) {
+  left: 80px;
+}
+.hero-section .container .wrapper .description-center .grid.active span p {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.hero-section .container .wrapper .description-center .numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 11px;
+  overflow: hidden;
+}
+.hero-section .container .wrapper .description-center .numbers .plus {
+  position: absolute;
+}
+.hero-section .container .wrapper .description-center .numbers span {
+  line-height: 11px;
+  font-size: 12px;
+}
+.hero-section .container .wrapper .description-center .numbers p {
+  line-height: 11px;
+  font-size: 12px;
+}
+.hero-section .container .wrapper .description-center .numbers .hide-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .numbers
+  .hide-text:nth-of-type(1) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  overflow: hidden;
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .numbers
+  .hide-text:nth-of-type(1)
+  p {
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.hero-section .container .wrapper .description-center .numbers .try {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .numbers.active
+  .hide-text {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-center
+  .numbers.active
+  .hide-text:nth-of-type(1)
+  p {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.hero-section .container .wrapper .description-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -175px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 750px;
+  left: 0;
+}
+.hero-section .container .wrapper .description-bottom .info-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 200px;
+}
+.hero-section .container .wrapper .description-bottom .info-col .hide-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 12px;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  position: relative;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.hero-section .container .wrapper .description-bottom .info-col .hide-text p {
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+  position: absolute;
+  font-size: 12px;
+  line-height: 11px;
+}
+.hero-section
+  .container
+  .wrapper
+  .description-bottom
+  .info-col
+  .hide-text
+  p:nth-of-type(2) {
+  -webkit-transform: translateY(200%);
+  -ms-transform: translateY(200%);
+  transform: translateY(200%);
+}
+.hero-section
+  .container
+  .wrapper
+  .description-bottom
+  .info-col
+  .hide-text
+  p.active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.hero-section
+  .container
+  .wrapper
+  .description-bottom
+  .info-col
+  .hide-text:nth-of-type(2) {
+  left: 30%;
+  margin-bottom: 20px;
+}
+.hero-section .container .wrapper .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 400px;
+  height: 268px;
+  overflow: hidden;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 1;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+.hero-section .container .wrapper .box img {
+  width: 400px;
+  position: absolute;
+  -webkit-transform: scale(1.9);
+  -ms-transform: scale(1.9);
+  transform: scale(1.9);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.hero-section .container .wrapper .box .video_1 {
+  display: none;
+  width: 400px;
+  -webkit-transform: scale(1) translateY(16px);
+  -ms-transform: scale(1) translateY(16px);
+  transform: scale(1) translateY(16px);
+  opacity: 0;
+  position: absolute;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.hero-section .container .wrapper .box .video_2 {
+  display: none;
+  width: 400px;
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  position: absolute;
+}
+.hero-section .container .wrapper .box .video_3 {
+  display: none;
+  width: 400px;
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  position: absolute;
+}
+.hero-section .container .wrapper .box.active {
+  bottom: unset;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+.hero-section .container .wrapper .counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 238px;
+  height: 238px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.hero-section .container .wrapper .counter .current {
+  color: #fff;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+.hero-section .container .wrapper .counter .current p {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.hero-section .container .wrapper .counter .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  opacity: 0.4;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(1) {
+  top: 0;
+  width: 1px;
+  height: 93px;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(2) {
+  right: 0;
+  height: 1px;
+  width: 93px;
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(3) {
+  bottom: 0;
+  width: 1px;
+  height: 93px;
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(3)::after {
+  bottom: unset;
+  top: 0;
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(4) {
+  left: 0;
+  height: 1px;
+  width: 93px;
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+}
+.hero-section .container .wrapper .counter .line:nth-of-type(4)::after {
+  right: 0;
+}
+.hero-section .container .wrapper .counter .line::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  background-color: #d9d9d9;
+  bottom: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+}
+.hero-section .container .wrapper .counter .line.active:nth-of-type(1)::after {
+  width: 100%;
+  height: 100%;
+}
+.hero-section .container .wrapper .counter .line.active:nth-of-type(2)::after {
+  width: 100%;
+  height: 100%;
+}
+.hero-section .container .wrapper .counter .line.active:nth-of-type(3)::after {
+  width: 100%;
+  height: 100%;
+}
+.hero-section .container .wrapper .counter .line.active:nth-of-type(4)::after {
+  width: 100%;
+  height: 100%;
+}
+.hero-section .container .wrapper-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 284px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+.hero-section .container .wrapper-left .box-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  margin-bottom: 13px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+}
+.hero-section .container .wrapper-left .box-left img {
+  width: 284px;
+  position: absolute;
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+.hero-section .container .wrapper-left .box-left .blue {
+  z-index: 1;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+.hero-section .container .wrapper-left .box-left .green {
+  z-index: 1;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+.hero-section .container .wrapper-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 178px;
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  cursor: pointer;
+}
+.hero-section .container .wrapper-right .box-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 178px;
+  height: 241px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.hero-section .container .wrapper-right .box-right img {
+  width: 178px;
+  position: absolute;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.hero-section .container .wrapper-right .box-right .green {
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+}
+.hero-section .container .wrapper-right .box-right .orange {
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+}
+.hero-section .container .close-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 10;
+}
+.hero-section .container .close-animation img {
+  width: 32px;
+  height: 32px;
+}
+.hero-section #cet-time {
+  color: #fff;
+}
+
+.buttons-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 178px;
+  gap: 8px;
+  overflow: hidden;
+}
+.buttons-arrow .arrow-left,
+.buttons-arrow .arrow-right {
+  color: #fff;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.1, 1);
+  -webkit-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  transform: translateY(-110%);
+}
+.buttons-arrow .arrow-left:hover,
+.buttons-arrow .arrow-right:hover {
+  opacity: 0.7;
+}
+.buttons-arrow .arrow-right img {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.buttons-arrow img {
+  width: 34px;
+  height: 34px;
+}
+.buttons-arrow.active .arrow-left,
+.buttons-arrow.active .arrow-right {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body,
+main {
+  overflow-x: hidden;
+  background: #070707;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: var(--main-font);
+  font-size: 0.16rem;
+  line-height: 0.2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+input::-webkit-input-placeholder,
+input::placeholder,
+textarea::-webkit-input-placeholder,
+textarea::placeholder {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus::-webkit-input-placeholder,
+input:focus::placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  color: white !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s,
+    color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+.video {
+  position: relative;
+}
+.video img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+}
+.video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.video.bl-lazy img {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+  <main class="home">
+    <section class="hero-section">
+      <div class="container">
+        <div class="socials">
+          <div class="links">
+            <a target="_blank" href="https://dribbble.com/blacklead-studio" class="desc-1 up-text">.DRibbble.</a>
+            <a target="_blank" href="https://x.com/blackleadStudio" class="desc-1 up-text">.X.</a>
+            <a target="_blank" href="https://www.instagram.com/blacklead.studio" class="desc-1 up-text">.instagram.</a>
+          </div>
+          <div class="logo-desc">
+            <a target="_blank" href="https://blacklead.studio/" class="hide-img">
+              <img src="https://i.postimg.cc/QxWjtkKj/logo-bls.png" alt="" />
+            </a>
+            <div class="hide-text">
+              <p class="desc-1 up-text">
+                Your digital Parnter<br /> for success. © BL/S®, 2024
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="description-center">
+            <div class="grid">
+              <span class="desc-1 up-text">
+                <p>NON COMMERCIAL</p>
+              </span>
+              <span class="desc-1 up-text">
+                <p>JULY</p>
+              </span>
+              <span class="desc-1 up-text">
+                <p>2024</p>
+              </span>
+            </div>
+            <div class="numbers">
+              <div class="hide-text">
+                <p class="desc-1">+</p>
+              </div>
+              <div class="hide-text">
+                <p class="desc-1">
+                  <span class="count-text desc-1">_0
+                    <div class="try">
+                      <span class="desc-1">1</span><span class="desc-1">2</span><span class="desc-1">3</span>
+                    </div>
+                  </span>
+                  <span class="count-text desc-1">/03</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="description-bottom">
+            <div class="info-col">
+              <div class="hide-text change-text">
+                <p class="desc-1 up-text">iRB6335/2 OPTICS</p>
+                <p class="desc-1 up-text">SPF4333/2 OPTICS</p>
+                <p class="desc-1 up-text">RX65281/2 OPTICS</p>
+              </div>
+              <div class="hide-text change-text">
+                <p class="desc-1 up-text">eyeglasses</p>
+                <p class="desc-1 up-text">classic_POP</p>
+                <p class="desc-1 up-text">sun_tOP</p>
+              </div>
+              <div class="hide-text change-text">
+                <p class="desc-1 up-text">
+                  p.01_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  X.16
+                </p>
+                <p class="desc-1 up-text">
+                  I.03_C.25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  R.12
+                </p>
+                <p class="desc-1 up-text">
+                  d.02_Y.48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  J.35
+                </p>
+              </div>
+            </div>
+            <div class="info-col">
+              <div class="hide-text">
+                <p class="desc-1 up-text">your_</p>
+              </div>
+              <div class="hide-text">
+                <p class="desc-1 up-text">style</p>
+              </div>
+              <div class="hide-text">
+                <p class="desc-1 up-text">discover_++ ➔</p>
+              </div>
+            </div>
+            <div class="info-col">
+              <div class="hide-text">
+                <p class="desc-1 up-text" id="cet-time"></p>
+              </div>
+              <div class="hide-text">
+                <p class="desc-1 up-text">cet</p>
+              </div>
+              <div class="hide-text">
+                <p class="desc-1 up-text">+/+</p>
+              </div>
+            </div>
+          </div>
+          <div class="box from-video">
+            <img src="https://i.postimg.cc/vZR3KthZ/1-167-217.png" alt="" />
+            <video class="video_1" muted playsinline loop>
+              <source src="https://www.dropbox.com/scl/fi/pgzc27bvjlh4wqs1a0x42/video_1.mp4?rlkey=hdvvg5tsl4kfmbbg4zimy2mgi&st=hn6f5srf&raw=1" type="video/mp4;" />
+            </video>
+            <video class="video_2" muted playsinline loop>
+              <source src="https://www.dropbox.com/scl/fi/40nwbkzo84ngv4azzr18k/video_2.mp4?rlkey=y4qy8jz3rzj657wgwzphg3f91&st=4tnwiipr&raw=1" type="video/mp4;" />
+            </video>
+            <video class="video_3" muted playsinline loop>
+              <source src="https://www.dropbox.com/scl/fi/17vt73otfh85ak3t0bwyc/video_3.mp4?rlkey=b2b4ebwrmup5zdeek8e7wpk7y&st=gsaykje1&raw=1" type="video/mp4;" />
+            </video>
+          </div>
+          <div class="box second">
+            <img src="https://i.postimg.cc/YSM8r2Jc/3.png" alt="" />
+          </div>
+          <div class="box third">
+            <img src="https://i.postimg.cc/t4h2Gnvt/2-167-293.png" alt="" />
+          </div>
+          <div class="counter">
+            <span class="current">
+              <p>01</p>
+            </span>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="wrapper-left">
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/fLjVwDnP/Orange-1.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/prRn8yJx/Blue-1.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/3xd02smy/Green-01.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/SRSJR3mx/Orange-2.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/L6418Ys3/Blue-2.png.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/2SMbG070/Green-02.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/d35Dy60m/Orange-3.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/44QcGbX3/Blue-3.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/rp4dP5hM/Green-03.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/c1hv2xcg/Orange-4.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/YqXmGrGK/Blue-4.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/Y9w4KjVg/Green-04.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/fLjVwDnP/Orange-1.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/prRn8yJx/Blue-1.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/3xd02smy/Green-01.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/SRSJR3mx/Orange-2.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/L6418Ys3/Blue-2.png.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/2SMbG070/Green-02.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/d35Dy60m/Orange-3.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/44QcGbX3/Blue-3.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/rp4dP5hM/Green-03.png" alt="" />
+          </div>
+          <div class="box-left">
+            <img class="orange" src="https://i.postimg.cc/c1hv2xcg/Orange-4.png" alt="" />
+            <img class="blue" src="https://i.postimg.cc/YqXmGrGK/Blue-4.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/Y9w4KjVg/Green-04.png" alt="" />
+          </div>
+        </div>
+        <div class="wrapper-right">
+          <div class="box-right">
+            <img class="blue" src="https://i.postimg.cc/TPx9tsNk/2-167-293.png" alt="" />
+            <img class="green" src="https://i.postimg.cc/K8kV6CNx/Green-1.png" alt="" />
+            <img class="orange" src="https://i.postimg.cc/N0xxSxWQ/1-167-217.png" alt="" />
+          </div>
+          <div class="buttons-arrow">
+            <div class="arrow-left">
+              <img src="https://i.postimg.cc/VkQmbrXn/arrow.png" alt="" />
+            </div>
+            <div class="arrow-right">
+              <img src="https://i.postimg.cc/VkQmbrXn/arrow.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    gsap.registerPlugin(CustomEase);
+    CustomEase.create("hop", "M0,0 C0.3,0 0.1,1 1,1");
+
+    let wrapper = document.querySelector(".wrapper");
+    let wrapperLeft = document.querySelector(".wrapper-left");
+    let wrapperLeftBox = document.querySelectorAll(".wrapper-left .box-left");
+    let wrapperLeftBoxImg = document.querySelectorAll(
+      ".wrapper-left .box-left img"
+    );
+    let wrapperLeftBoxImgOrange = document.querySelectorAll(
+      ".wrapper-left .box-left .orange"
+    );
+    let wrapperLeftBoxImgBlue = document.querySelectorAll(
+      ".wrapper-left .box-left .blue"
+    );
+    let wrapperLeftBoxImgGreen = document.querySelectorAll(
+      ".wrapper-left .box-left .green"
+    );
+    let wrapperRight = document.querySelector(".wrapper-right");
+    let wrapperRightBox = document.querySelector(".wrapper-right .box-right");
+    let wrapperRightBoxImg = document.querySelectorAll(
+      ".wrapper-right .box-right img"
+    );
+    let wrapperRightBoxImgOrange = document.querySelector(
+      ".wrapper-right .box-right .orange"
+    );
+    let wrapperRightBoxImgBlue = document.querySelector(
+      ".wrapper-right .box-right .blue"
+    );
+    let wrapperRightBoxImgGreen = document.querySelector(
+      ".wrapper-right .box-right .green"
+    );
+    let box = document.querySelectorAll(".box");
+    let boxImg = document.querySelectorAll(".box img");
+    let counter = document.querySelector(".counter .current p");
+    let lines = document.querySelectorAll(".counter .line");
+    let video = document.querySelector(".video_1");
+    let videoBlue = document.querySelector(".video_2");
+    let videoGreen = document.querySelector(".video_3");
+    let boxFromVideo = document.querySelector(
+      ".hero-section .container .wrapper .from-video"
+    );
+    let allVideo = document.querySelectorAll(
+      ".hero-section .container .wrapper .from-video video"
+    );
+    let closeAnimation = document.querySelector(".close-animation");
+    let arrowLeft = document.querySelector(".arrow-left");
+    let arrowRight = document.querySelector(".arrow-right");
+    let socials = document.querySelector(".socials");
+    let gridDescription = document.querySelector(".grid");
+    let numbers = document.querySelector(".numbers");
+    let buttonsArrows = document.querySelector(".buttons-arrow");
+    let descriptionBottom = document.querySelector(".description-bottom");
+    let infoCall = descriptionBottom.querySelectorAll(".info-col .hide-text");
+    let countNumbers = document.querySelector(".numbers .hide-text .try");
+    let changeTextBlocks = document.querySelectorAll(".change-text");
+
+    function updateCETTime() {
+      const options = {
+        timeZone: "Europe/Berlin",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true
+      };
+      const formatter = new Intl.DateTimeFormat("en-US", options);
+      const cetTime = formatter.format(new Date());
+
+      document.getElementById("cet-time").textContent = cetTime;
+    }
+    setInterval(updateCETTime, 1000);
+    updateCETTime();
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        if (box.length === 3) {
+          box[1].style.display = "none";
+          const anim1 = gsap
+            .timeline()
+            .to(box[0].querySelector("img"), {
+              x: "20px",
+              ease: "hop",
+              duration: 0.3
+            })
+            .to(box[0], {
+              x: "-400px",
+              ease: "hop",
+              duration: 0.6,
+              zIndex: 2
+            })
+            .to(
+              box[0].querySelector("img"),
+              {
+                x: "0px",
+                ease: "hop",
+                duration: 0.3
+              },
+              0.5
+            );
+          const anim2 = gsap
+            .timeline()
+            .to(box[2].querySelector("img"), {
+              x: "-20px",
+              ease: "hop",
+              duration: 0.3
+            })
+            .to(box[2], {
+              x: "400px",
+              ease: "hop",
+              duration: 0.6
+            })
+            .to(
+              counter,
+              {
+                duration: 0.3,
+                ease: "hop",
+                y: "0%"
+              },
+              "<"
+            )
+            .to(
+              lines,
+              {
+                duration: 0.1,
+                delay: 0.1,
+                onComplete: () => {
+                  lines.forEach((line) => line.classList.add("active"));
+                }
+              },
+              "<"
+            )
+            .to(
+              box[2].querySelector("img"),
+              {
+                x: "0px",
+                ease: "hop",
+                duration: 0.3
+              },
+              0.5
+            )
+            .to(counter, {
+              innerHTML: 100,
+              duration: 1,
+              ease: "hop",
+              snap: { innerHTML: 1 },
+              onUpdate: () => {
+                counter.textContent = String(
+                  Math.round(counter.innerHTML)
+                ).padStart(2, "0");
+              }
+            })
+            .to(lines, {
+              rotation: 180,
+              ease: "hop",
+              duration: 0.3
+            })
+            .to(counter, {
+              duration: 0.3,
+              ease: "hop",
+              y: "100%"
+            })
+            .to(lines, {
+              duration: 0.3,
+              delay: 0.1,
+              onComplete: () => {
+                lines.forEach((line) => line.classList.remove("active"));
+              }
+            })
+            .call(() => {
+              const anim3 = gsap
+                .timeline()
+                .to(box[0].querySelector("img"), {
+                  x: "-20px",
+                  ease: "hop",
+                  duration: 0.3
+                })
+                .to(box[0], {
+                  x: "0px",
+                  ease: "hop",
+                  duration: 0.6,
+                  zIndex: 2
+                })
+                .to(
+                  box[0].querySelector("img"),
+                  {
+                    x: "0px",
+                    ease: "hop",
+                    duration: 0.3
+                  },
+                  0.5
+                );
+
+              const anim4 = gsap
+                .timeline()
+                .to(box[2].querySelector("img"), {
+                  x: "20px",
+                  ease: "hop",
+                  duration: 0.3
+                })
+                .to(box[2], {
+                  x: "0px",
+                  ease: "hop",
+                  duration: 0.6
+                })
+                .to(
+                  box[2].querySelector("img"),
+                  {
+                    x: "0px",
+                    ease: "hop",
+                    duration: 0.3
+                  },
+                  0.5
+                );
+              anim4.call(() => {
+                runAdditionalTimeline2();
+              });
+            });
+        }
+      }
+    });
+
+    function runAdditionalTimeline2() {
+      const tl2 = gsap.timeline();
+      tl2.to(
+        video,
+        {
+          display: "flex",
+          opacity: 1,
+          duration: 0.5,
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+        },
+        0
+      );
+      tl2.add(() => {
+        video.play();
+      }, 0);
+
+      tl2.add(() => {
+        box[0].classList.add("active");
+      }, 0);
+
+      tl2.to(
+        box[0],
+        {
+          height: "420px",
+          duration: 1,
+          ease: "hop"
+        },
+        0
+      );
+      tl2.to(
+        wrapperLeftBox,
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          ease: "hop",
+          duration: 1,
+          stagger: 0.2
+        },
+        0
+      );
+      tl2.to(
+        wrapperLeftBoxImgOrange,
+        {
+          ease: "hop",
+          duration: 1,
+          scale: 1.5
+        },
+        0
+      );
+      tl2.to(
+        wrapperRightBox,
+        {
+          clipPath: "polygon(0% 0,100% 0,100% 100%,0% 100%)",
+          ease: "hop",
+          duration: 1
+        },
+        0
+      );
+      tl2.to(
+        wrapperRightBoxImgBlue,
+        {
+          ease: "hop",
+          duration: 1,
+          scale: 1
+        },
+        0
+      );
+      tl2.to(
+        box[2],
+        {
+          display: "none",
+          duration: 0.1
+        },
+        0
+      );
+
+      tl2.to(
+        box[0].querySelector("img"),
+        {
+          zIndex: -2,
+          duration: 0.1,
+          display: "none"
+        },
+        0
+      );
+
+      tl2.add(() => {
+        socials.classList.add("active");
+      }, 0);
+
+      tl2.add(() => {
+        gridDescription.classList.add("active");
+      }, 0);
+
+      tl2.add(() => {
+        numbers.classList.add("active");
+      }, 0);
+
+      tl2.add(() => {
+        buttonsArrows.classList.add("active");
+      }, 0);
+
+      tl2.add(() => {
+        infoCall.forEach((container) => {
+          const firstParagraph = container.querySelector("p");
+          if (firstParagraph) {
+            firstParagraph.classList.add("active");
+          }
+        });
+      }, 0);
+      const infiniteScroll = gsap.timeline({ repeat: -1, ease: "linear" });
+
+      infiniteScroll.to(wrapperLeft, {
+        y: "-50%",
+        duration: 16,
+        ease: "none",
+        onComplete: () => {
+          gsap.set(wrapperLeft, { y: "0%" });
+        }
+      });
+      tl2.add(infiniteScroll, "<");
+
+      let isAnimating = false;
+      const changeTextBlocks = document.querySelectorAll(".change-text");
+
+      changeTextBlocks.forEach((block) => {
+        const paragraphs = block.querySelectorAll("p");
+        let activeIndex = 0;
+
+        const updateActiveParagraph = (newIndex) => {
+          paragraphs[activeIndex].classList.remove("active");
+          activeIndex = newIndex;
+          paragraphs[activeIndex].classList.add("active");
+        };
+        paragraphs[activeIndex].classList.add("active");
+
+        arrowLeft.addEventListener("click", () => {
+          if (isAnimating) return;
+          isAnimating = true;
+          const newIndex =
+            (activeIndex - 1 + paragraphs.length) % paragraphs.length;
+          updateActiveParagraph(newIndex);
+          isAnimating = false;
+        });
+
+        arrowRight.addEventListener("click", () => {
+          if (isAnimating) return;
+          isAnimating = true;
+          const newIndex = (activeIndex + 1) % paragraphs.length;
+          updateActiveParagraph(newIndex);
+          isAnimating = false;
+        });
+      });
+      let currentIndex = 0;
+      let clickCount = 0;
+
+      allVideo.forEach((video, index) => {
+        if (index !== currentIndex) {
+          video.style.display = "none";
+        } else {
+          video.play();
+        }
+      });
+      arrowLeft.addEventListener("click", () => {
+        const currentVideo = allVideo[currentIndex];
+        const currentRightImg = wrapperRightBoxImg[currentIndex];
+        const prevIndex = (currentIndex - 1 + allVideo.length) % allVideo.length;
+        const prevVideo = allVideo[prevIndex];
+        const prevRightImg = wrapperRightBoxImg[prevIndex];
+
+        gsap.set(prevVideo, {
+          display: "flex",
+          clipPath: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)",
+          zIndex: 1
+        });
+        prevVideo.play();
+
+        clickCount -= 1;
+        if (clickCount < 0) {
+          clickCount = 2;
+        }
+        const yShift = clickCount * -11;
+
+        gsap.to(countNumbers, {
+          y: `${yShift}px`,
+          ease: "hop",
+          duration: 0.3
+        });
+
+        gsap.to(prevVideo, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          duration: 1,
+          onComplete: () => {
+            currentVideo.pause();
+            currentVideo.style.display = "none";
+            prevVideo.style.zIndex = "-1";
+          }
+        });
+
+        gsap.set(prevRightImg, {
+          display: "flex",
+          clipPath: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)",
+          zIndex: 1,
+          scale: 1.5
+        });
+
+        gsap.to(prevRightImg, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          scale: 1.15,
+          duration: 1,
+          ease: "hop",
+          onComplete: () => {
+            currentRightImg.style.display = "none";
+            prevRightImg.style.zIndex = "-1";
+          }
+        });
+
+        const imageSequences = ["orange", "blue", "green"];
+
+        const prevImageClass =
+          imageSequences[
+            (currentIndex - 1 + imageSequences.length) % imageSequences.length
+          ];
+
+        wrapperLeftBox.forEach((box, index) => {
+          const nextImg = box.querySelector(`.${imageSequences[currentIndex]}`);
+          const prevImg = box.querySelector(`.${prevImageClass}`);
+
+          const tl3 = gsap.timeline();
+          tl3.set(prevImg, {
+            display: "flex",
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+            zIndex: 1,
+            scale: 2
+          });
+
+          tl3.to(prevImg, {
+            clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)",
+            ease: "hop",
+            duration: 1,
+            scale: 1.1,
+            stagger: 0.2 * index,
+            delay: 0.2,
+            onComplete: () => {
+              nextImg.style.display = "none";
+              nextImg.style.clipPath =
+                "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)";
+              prevImg.style.zIndex = "-1";
+            }
+          });
+        });
+        currentIndex = prevIndex;
+        isAnimating = false;
+      });
+      //Click change animation
+      arrowRight.addEventListener("click", () => {
+        const currentVideo = allVideo[currentIndex];
+        const currentRightImg = wrapperRightBoxImg[currentIndex];
+        const nextIndex = (currentIndex + 1) % allVideo.length;
+        const nextVideo = allVideo[nextIndex];
+        const nexRightImg = wrapperRightBoxImg[nextIndex];
+
+        gsap.set(nextVideo, {
+          display: "flex",
+          clipPath: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)",
+          zIndex: 1
+        });
+        nextVideo.play();
+
+        clickCount += 1;
+        const yShift = clickCount * -11;
+
+        if (clickCount > 2) {
+          clickCount = 0;
+          gsap.to(countNumbers, {
+            y: "0px",
+            ease: "hop",
+            duration: 0.3
+          });
+        } else {
+          gsap.to(countNumbers, {
+            y: `${yShift}px`,
+            ease: "hop",
+            duration: 0.3
+          });
+        }
+
+        gsap.to(nextVideo, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          duration: 1,
+          onComplete: () => {
+            currentVideo.pause();
+            currentVideo.style.display = "none";
+            nextVideo.style.zIndex = "-1";
+          }
+        });
+
+        gsap.set(nexRightImg, {
+          display: "flex",
+          clipPath: "polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%)",
+          zIndex: 1,
+          scale: 1.5
+        });
+
+        gsap.to(nexRightImg, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          scale: 1.15,
+          duration: 1,
+          ease: "hop",
+          onComplete: () => {
+            currentRightImg.style.display = "none";
+            nexRightImg.style.zIndex = "-1";
+          }
+        });
+
+        const imageSequences = ["orange", "blue", "green"];
+
+        currentIndex = (currentIndex + 1) % imageSequences.length;
+        const nextImageClass = imageSequences[currentIndex];
+
+        wrapperLeftBox.forEach((box, index) => {
+          const prevImg = box.querySelector(
+            `.${
+              imageSequences[
+                (currentIndex - 1 + imageSequences.length) % imageSequences.length
+              ]
+            }`
+          );
+          const nextImg = box.querySelector(`.${nextImageClass}`);
+
+          const tl3 = gsap.timeline();
+          tl3.set(nextImg, {
+            display: "flex",
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+            zIndex: 1,
+            scale: 2
+          });
+
+          tl3.to(nextImg, {
+            clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)",
+            ease: "hop",
+            duration: 1,
+            scale: 1.1,
+            stagger: 0.2 * index,
+            delay: 0.2,
+            onComplete: () => {
+              prevImg.style.display = "none";
+              prevImg.style.clipPath =
+                "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)";
+              nextImg.style.zIndex = "-1";
+            }
+          });
+        });
+        currentIndex = nextIndex;
+        isAnimating = false;
+      });
+    }
+
+    box.forEach((box) => {
+      tl.to(box, {
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 0.5,
+        ease: "hop"
+      }).to(
+        box.querySelector("img"),
+        {
+          scale: 1,
+          y: 20,
+          duration: 0.5,
+          ease: "hop"
+        },
+        "<"
+      );
+    });
+  </script>
+</body>
+</html>
